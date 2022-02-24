@@ -10,6 +10,7 @@ class TattooPost(models.Model):
     image = CloudinaryField('image', default="https://res.cloudinary.com/dxsodecl1/image/upload/v1644248279/cld-sample.jpg")
     #username added
 
+
 def __str__(self):
     return self.title
 

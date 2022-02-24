@@ -3,17 +3,22 @@
 
 
 {% block content %}
-    <h1>BOOO YAAA</h1>
     <div class="tattooposts">
-        {% for tattoopost in tattooposts %}
-            <div class="post">
-                <h2>
-                    <a href="#">{{ tattoopost.title}}</a>
-                </h2>
-                <p>{{ tattoopost.info }}</p>
-                <p>{{ tattoopost.date }}</p>
-                <p>{% cloudinary tattoopost.image %}</p>
+        <h2>
+            test
+        </h2>
+        <div class="post">
+            <div class="container d-flex justify-content-left">
+                        {% for tattoopost in tattooposts %}
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-img-top tattoocardimg" alt="User posts">{% cloudinary tattoopost.image %}</div>
+                            <div class="card-body">
+                                <h4 class="card-text">{{ tattoopost.title}}</h4>
+                                <p>{{ tattoopost.info }}</p>
+                            </div>
+                          </div>
+                    {% endfor %}
             </div>
-        {% endfor %}
+        </div>
     </div>
 {% endblock %}
