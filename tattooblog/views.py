@@ -17,4 +17,4 @@ def tattoo_gallery_detail(request, slug):
     """
     Enables the view of each post
     """
-    # return render(request, 'tattooblog/tattoo_post.html', {'': })
+    return HttpResponse(slug)
