@@ -13,8 +13,8 @@
                         <div class="card" style="width: 18rem;">
                             <div class="card-img-top tattoocardimg" alt="User posts">{% cloudinary tattoopost.image %}</div>
                             <div class="card-body">
-                                <h4 class="card-text">{{ tattoopost.title}}</h4>
-                                <p>{{ tattoopost.info }}</p>
+                                <h4 class="card-text"><a href="{% url '' %}">{{ tattoopost.title}}</a></h4>
+                                <p><a href="{% url '' %}">{{ tattoopost.info }}</a></p>
                             </div>
                           </div>
                     {% endfor %}

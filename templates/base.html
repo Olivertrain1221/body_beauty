@@ -11,20 +11,20 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand fs-1 text header mg-2" href="#">Body Beauty</a>
+          <a class="navbar-brand fs-1 text header mg-2" href="{% url 'homepage' %}">Body Beauty</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav ms-4 me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active fs-2" aria-current="page" href="#">Home</a>
+                <a class="nav-link active fs-2" aria-current="page" href="{% url 'homepage' %}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link fs-2" href="#">About Us</a>
+                <a class="nav-link fs-2" href="{% url 'about' %}">About Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link fs-2" href="#">Gallery</a>
+                <a class="nav-link fs-2" href="{% url 'gallery' %}">Gallery</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link fs-2" href="#">Login</a>

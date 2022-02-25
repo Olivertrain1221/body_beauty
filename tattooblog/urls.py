@@ -1,8 +1,8 @@
 from django.urls import path
 from . import views
-from.models import TattooPost
 
 
 urlpatterns = [
-    path('', views.tattoo_gallery),
+    path('', views.tattoo_gallery, name="gallery"),
+    path('<slug:slug>/', views.tattoo_gallery_detail, name="post_detail"),
 ]
