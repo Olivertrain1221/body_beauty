@@ -8,16 +8,15 @@
             Welcome to the gallery!
         </h2>
         <div class="post">
-            <div class="container d-flex justify-content-left">
-                        {% for tattoopost in tattooposts %}
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-img-top tattoocardimg" alt="User posts">{% cloudinary tattoopost.image %}</div>
-                            <div class="card-body">
-                                <h4 class="card-text"><a href="{% url 'tattooposts:post_detail' slug=tattoopost.slug %}">{{ tattoopost.title}}</a></h4>                                <p><a href="#">{{ tattoopost.info }}</a></p>w
+            {% for tattoopost in tattooposts %}
+                            <div class="card">
+                                <div class="card-img-top" alt="User posts">{% cloudinary tattoopost.image %}</div>
+                                <div class="card-body">
+                                    <a class="card-text " href="{% url 'tattooposts:post_detail' slug=tattoopost.slug %}">{{ tattoopost.title }}</a>
+                                    <a class="card-text" href="#">{{ tattoopost.info }}</a>
+                                </div>
                             </div>
-                          </div>
                     {% endfor %}
-            </div>
         </div>
     </div>
 {% endblock %}

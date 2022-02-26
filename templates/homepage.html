@@ -3,23 +3,35 @@
 
 {% block content %}
 <h1 class="centeralign slogan mt-5">Welcome to Body Beauty, where the easel is your skin.</h1>
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block site-imagecarosel imagecarousel"
+        src="https://res.cloudinary.com/dxsodecl1/image/upload/v1645878549/slideshow1_k1ebsi.jpg" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block site-imagecarosel imagecarousel"
+        src="https://res.cloudinary.com/dxsodecl1/image/upload/v1645812903/slideshow2_obhfuj.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block site-imagecarosel imagecarousel"
+        src="https://res.cloudinary.com/dxsodecl1/image/upload/v1645878828/slideshow3_zeyjcf.jpg" alt="Third slide">
+    </div>
+  </div>
+</div>
+<div>
+  <!-- <img class="site-images" src="https://res.cloudinary.com/dxsodecl1/image/upload/v1645875884/tattooartistworking_wvf3bn.jpg"> -->
+</div>
+<div class="homepage-text text-center">
+  Welcome To the most renown tattoo shop on the south coast, where your body becomes the easel, to become the art.
+  At Body Beauty we take great pride in our work, employing only the best of the best artists.
+</div>
+<div>
 
-    <h1>This is the homepage</h1>
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block imagecarousel" src="https://res.cloudinary.com/dxsodecl1/image/upload/v1645812905/slideshow1_gnl6fm.jpg" alt="First slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block imagecarousel" src="https://res.cloudinary.com/dxsodecl1/image/upload/v1645812903/slideshow2_obhfuj.jpg" alt="Second slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block imagecarousel" src="https://res.cloudinary.com/dxsodecl1/image/upload/v1645812905/slideshow1_gnl6fm.jpg" alt="Third slide">
-          </div>
-        </div>
-      </div>
-      <script>
-          $('.carousel').carousel({interval: 5000})
-      </script>
+</div>
+<script>
+  $('.carousel').carousel({
+    interval: 5000
+  })
+</script>
 {% endblock %}
-
