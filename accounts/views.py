@@ -10,7 +10,7 @@ def account_signup(request):
         if form.is_valid():
             form.save()
             #log the user in at some point!!!
-        return redirect('tattooposts:gallery')
+            return redirect('tattooposts:gallery')
     else:
         form = UserCreationForm()
-        return render(request, 'accounts/signup.html', {'formsignup': form})
+    return render(request, 'accounts/signup.html', {'formsignup': form})
