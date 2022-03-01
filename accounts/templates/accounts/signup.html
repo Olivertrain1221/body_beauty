@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load cloudinary %}
+
+
+{% block content %}
+    <h1>Welcome to the signup page</h1>
+    <form class="site-form" action="/accounts/signup/" method="post">
+        {% csrf_token %}
+        {{ formsignup }}
+        <input type="submit" value="Signup">
+    </form>
+
+{% endblock %}

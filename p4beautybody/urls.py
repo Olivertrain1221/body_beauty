@@ -10,4 +10,5 @@ urlpatterns = [
     path('', views.homepage, name="homepage"),
     path('about/', views.about_page, name="about"),
     path('tattooblog/', include("tattooblog.urls")),
+    path('accounts/', include("accounts.urls")),
 ]
