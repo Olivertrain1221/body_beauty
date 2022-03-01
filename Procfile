@@ -1,1 +1,1 @@
-web: guincorn p4beautybody.wsgi
+web: gunicorn p4beautybody.wsgi
