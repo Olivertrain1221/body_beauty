@@ -17,4 +17,5 @@ def tattoo_gallery_detail(request, slug):
     """
     Enables the view of each post
     """
-    return HttpResponse(slug)
+    tattoopost = TattooPost.objects.get(slug=slug)
+    return render(request,'tattooblog/tattoopost_detail.html', {'post': tattoopost})
