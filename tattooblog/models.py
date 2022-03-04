@@ -16,4 +16,4 @@ class TattooPost(models.Model):
         return self.title
 
     def info(self):
-        return self.body[:20]
+        return self.body

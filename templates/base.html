@@ -1,4 +1,7 @@
 {% load static %}
+<!-- TODO: Sort boostrap versions out -->
+<!-- TODO: logging in of the user -->
+<!-- TODO: Create seperate app for about + or homepage (assess) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +33,7 @@
                 <a class="nav-link fs-2" href="{% url 'tattooposts:gallery' %}">Gallery</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link fs-2" href="#">Login</a>
+                <a class="nav-link fs-2" href="{% url 'accounts:login' %}">Login</a>
               </li>
             </ul>
             <span class="navbar-text">

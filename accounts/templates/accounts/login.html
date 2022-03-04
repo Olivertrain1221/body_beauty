@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load cloudinary %}
+
+
+{% block content %}
+    <h1>Log In</h1>
+    <form class="site-form" action="{% url 'accounts:login' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Login">
+    </form>
+    <p>If you dont have an account then <a href="{% url 'accounts:signup' %}">Sign Up now!</a></p>
+{% endblock %}
