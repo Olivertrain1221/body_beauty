@@ -32,9 +32,15 @@
               <li class="nav-item">
                 <a class="nav-link fs-2" href="{% url 'tattooposts:gallery' %}">Gallery</a>
               </li>
+              {% if user.is_authenticated%}
+              <li class="nav-item">
+                <a class="nav-link fs-2" href="{% url 'accounts:logout' %}">Logout</a>
+              </li>
+              {% else %}
               <li class="nav-item">
                 <a class="nav-link fs-2" href="{% url 'accounts:login' %}">Login</a>
               </li>
+              {% endif %}
             </ul>
             <span class="navbar-text">
             </span>

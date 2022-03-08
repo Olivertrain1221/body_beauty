@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load cloudinary %}
+
+
+{% block content %}
+    <h1>Leaving so soon?</h1>
+        <form method="post" class="logout-form">
+            {% csrf_token %}
+            <p>Are you sure you want to logout?</p>
+            <input type="submit" value="logout">
+        </form>
+{% endblock %}
