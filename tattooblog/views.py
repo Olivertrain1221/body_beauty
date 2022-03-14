@@ -2,6 +2,7 @@ from django.shortcuts import render
 from.models import TattooPost
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
+from . import forms
 
 # Create your views here.
 
@@ -27,4 +28,5 @@ def tattoo_create(request):
     """
     Allows the user to go to create a post
     """
-    return render(request, 'tattooblog/tattoo_post_create.html')
+    form = forms.CreatePost()
+    return render(request, 'tattooblog/tattoo_post_create.html', {'form': forms})
