@@ -4,11 +4,11 @@
 {% block content %}
 <div>
     <h2>Create an Awesome new idea!</h2>
-    <form class="post-form" action="index.html" method="post">
+    <form class="post-form" action="{% url 'tattooposts:create' %}" enctype="multipart/form-data" method="post">
+        {% csrf_token %}
         {{form}}
-        
+        <input type="submit" value="Post">
     </form>
 </div>
-
 {% endblock %}
 
