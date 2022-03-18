@@ -3,6 +3,12 @@
 
 body {
     font-family: 'Comic Neue', cursive;
+    background-color: black;
+    color: white;
+}
+
+.slogan {
+    color: white;
 }
 
 .tattooposts {
@@ -49,7 +55,8 @@ body {
 .homepage-text {
     font-family: 'Comic Neue', cursive;
     font-size: 10px;
-    
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .centeralign{
@@ -69,5 +76,6 @@ body {
 
 .footer {
     text-align: center;
+    width: 100%;
+    padding-left: 33%;
 }
-/* crop fills, and cover/ contain query>> tattocardimg */
