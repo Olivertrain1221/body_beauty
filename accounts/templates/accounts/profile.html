@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load cloudinary %}
+
+
+{% block content %}
+    <h1>Welcome to your profile {{ user.username }}</h1>
+
+    <div class="content-section">
+        <div class="media">
+            <img class="rounded-circle account-img" src="{{ user.profile.profile_image.url }}">
+            <div class="media-body">
+                <h2 class="text-secondary">{{ user.username</h2>
+            </div>
+        </div>
+        <
+    </div>
+
+
+{% endblock %}

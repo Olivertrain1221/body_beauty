@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
 
-
 def account_signup(request):
     """
     Is what is run when the signup url is called upon
@@ -47,3 +46,10 @@ def logout_view(request):
         return redirect('homepage')
     form = AuthenticationForm()
     return render(request, 'accounts/logout.html', {'form': form})
+
+
+def profile_view(request):
+    """
+    Shows the Users profile
+    """
+    return render(request, 'accounts/profile.html')

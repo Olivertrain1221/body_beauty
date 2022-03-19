@@ -3,6 +3,7 @@ from.models import TattooPost
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from . import forms
+from django.views.generic import UpdateView
 
 # Create your views here.
 

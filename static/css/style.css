@@ -7,6 +7,11 @@ body {
     color: white;
 }
 
+.hero {
+    width: 100%;
+    overflow: hidden;
+}
+
 .slogan {
     color: white;
 }
@@ -27,10 +32,19 @@ body {
     text-align: center;
     display: block;
     text-decoration: none;
-    color: black;
+    color: white;
     font-family: 'Comic Neue', cursive
 }
 
+.my-profile {
+    position: absolute;
+    float: right;
+}
+.card {
+    background-color: black;
+    width: 18rem;
+    padding-right: 50px;
+}
 .card img {
     width: 100%;
     object-fit: contain;
@@ -38,16 +52,10 @@ body {
 
 .wrapper {
     font-family: 'Comic Neue', cursive;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
-.site-imagecarosel {
-    width: 98%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: 200px;
-    border-radius: 8px;
-}
 .header{
     font-family: 'Dancing Script', cursive;
 }
@@ -59,7 +67,11 @@ body {
     margin-bottom: 20px;
 }
 
-.centeralign{
+.line {
+    border: red 20px;
+}
+
+.centeralign {
     font-family: 'Dancing Script', cursive;
     width: 100%;
     margin-top: 20px;
@@ -77,5 +89,10 @@ body {
 .footer {
     text-align: center;
     width: 100%;
-    padding-left: 33%;
+    display: flex;
+}
+
+.footer > li {
+    align-items: center;
+    justify-content: center;
 }
