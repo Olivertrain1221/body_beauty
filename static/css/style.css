@@ -3,8 +3,8 @@
 
 body {
     font-family: 'Comic Neue', cursive;
-    background-color: black;
     color: white;
+    background-color: slategray;
 }
 
 .hero {
@@ -21,6 +21,21 @@ body {
     flex-direction: column;    
     justify-content: center;
     text-align: center;
+}
+/* profile styles */
+
+.profile-text {
+    display: flex;
+    flex-direction: column;    
+    justify-content: center;
+    text-align: center;
+}
+
+.profile-image {
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 .post {

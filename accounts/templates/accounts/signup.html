@@ -3,11 +3,21 @@
 
 
 {% block content %}
-    <h1>Welcome to the signup page</h1>
-    <form class="site-form" action="/accounts/signup/" method="post">
-        {% csrf_token %}
-        {{ formsignup }}
-        <input type="submit" value="Signup">
-    </form>
+    <div class="content-section"> 
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Signup here</legend>
+                {{ form.as_p }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Continue</button>
+            </div>
+        </form>
+        <div class="border-top pt-4">
+            <small class="text-muted">Already Registered With An Account?<a class="ml-3" href='#'>Sign In</a>
+            </small>
+        </div>
+    </div>
 
 {% endblock %}

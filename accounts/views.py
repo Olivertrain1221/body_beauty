@@ -1,20 +1,24 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+from .forms import UserRegisterForm
 
 def account_signup(request):
     """
     Is what is run when the signup url is called upon
     """
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = UserRegisterForm(request.POST)
         if form.is_valid():
-            user = form.save()
-            login(request, user)
-            return redirect('tattooposts:gallery')
+            form.save()
+            username = form.cleaned_data.get('username')
+            messages.success(request, f'Account has been created for {username}!')
+            return redirect('homepage')
     else:
-        form = UserCreationForm()
-    return render(request, 'accounts/signup.html', {'formsignup': form})
+        form = UserRegisterForm()
+    return render(request, 'accounts/signup.html', {'form' : form})
 
 
 # Creates the login_view
@@ -48,6 +52,7 @@ def logout_view(request):
     return render(request, 'accounts/logout.html', {'form': form})
 
 
+@login_required(login_url="/accounts/login/")
 def profile_view(request):
     """
     Shows the Users profile
