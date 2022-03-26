@@ -12,10 +12,10 @@ def account_signup(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
-            form.save()
             username = form.cleaned_data.get('username')
+            form.save()
             messages.success(request, f'Account has been created for {username}!')
-            return redirect('login')
+            return redirect('accounts:login')
     else:
         form = UserRegisterForm()
     return render(request, 'accounts/signup.html', {'form' : form})
@@ -57,17 +57,16 @@ def profile_view(request):
     """
     Shows the Users profile only if logged in
     """
+    profile_form = ProfileFormUpdate(instance=request.user.profile)
+    account_form = AccountUpdateForm(instance=request.user)
     if request.method == 'POST':
         account_form = AccountUpdateForm(request.POST, instance=request.user)
         profile_form = ProfileFormUpdate(request.POST, request.FILES, instance=request.user.profile)
         if account_form.is_valid() and profile_form.is_valid():
             account_form.save()
             profile_form.save()
-            messages.success(request, f'Your account has been saved!')
-            return redirect('profile')
-    else:
-        account_form = AccountUpdateForm(instance=request.user)
-        profile_form = ProfileFormUpdate(instance=request.user.profile)
+            messages.success(request, 'Your account has been saved!')
+            return redirect('accounts:profile')
     
     context = {
         'account_form' : account_form,
