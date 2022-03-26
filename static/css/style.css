@@ -55,14 +55,37 @@ body {
     position: absolute;
     float: right;
 }
+
 .card {
     background-color: black;
     width: 18rem;
     padding-right: 50px;
 }
+
 .card img {
     width: 100%;
     object-fit: contain;
+}
+
+.asteriskField {
+    display: none;
+}
+
+#hint_id_username {
+    display: none;
+}
+
+#hint_id_password2 {
+    display: none;
+}
+
+.text-muted1 {
+    color: white;
+    text-decoration: none;
+}
+
+.signup li {
+    color: white;
 }
 
 .wrapper {

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% load cloudinary %}
 
 
@@ -6,12 +7,12 @@
     <h1>Log In</h1>
     <form class="site-form" action="{% url 'accounts:login' %}" method="post">
         {% csrf_token %}
-        {{ form }}
+        {{ form|crispy }}
         {% if request.GET.next %}
             <input type="hidden" name="next" value="{{ request.GET.next }}">
         {% endif %}
         <input type="submit" value="Login">
     </form>
-    <p>If you dont have an account then <a href="{% url 'accounts:signup' %}">Sign Up now!</a></p>
+    <p>If you dont have an account then <a class="text-muted1" href="{% url 'accounts:signup' %}">Sign Up now!</a></p>
 
 {% endblock %}

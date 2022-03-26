@@ -3,21 +3,24 @@
 
 
 {% block content %}
-    <div class="tattooposts">
-        <h2>
-            Welcome to the gallery!
-        </h2>
-        <a class="" href="{% url 'tattooposts:create' %}">Click here to add your art!</a>
-        <div class="post">
-            {% for tattoopost in tattooposts %}
-                            <div class="card">
-                                <div class="card-img-top" alt="User posts">{% cloudinary tattoopost.image %}</div>
-                                <div class="card-body">
-                                    <a class="card-text " href="{% url 'tattooposts:post_detail' slug=tattoopost.slug %}">{{ tattoopost.title }}</a>
-                                <a class="card-text" href="#">{{ tattoopost.info|truncatechars:20 }}</a>
-                                </div>
-                            </div>
-                    {% endfor %}
+<div class="tattooposts">
+    <h2>
+        Welcome to the gallery! the tattoo post heaven post and share your images here with the everyone"
+    </h2>
+    {% if user.is_authenticated%}
+    <a class="" href="{% url 'tattooposts:create' %}">Click here to add your art!</a>
+    {% endif %}
+    <div class="post">
+        {% for tattoopost in tattooposts %}
+        <div class="card">
+            <div class="card-img-top" alt="User posts">{% cloudinary tattoopost.image %}</div>
+            <div class="card-body">
+                <a class="card-text " href="{% url 'tattooposts:post_detail' slug=tattoopost.slug %}">{{
+                    tattoopost.title }}</a>
+                <a class="card-text" href="#">{{ tattoopost.info|truncatechars:20 }}</a>
+            </div>
         </div>
+        {% endfor %}
     </div>
+</div>
 {% endblock %}

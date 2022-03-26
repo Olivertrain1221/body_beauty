@@ -1,21 +1,21 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% load cloudinary %}
 
 
 {% block content %}
     <div class="content-section"> 
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Signup here</legend>
-                {{ form.as_p }}
-            </fieldset>
+            <div class="form-group signup">
+                {{ form|crispy }}
+            </div>
             <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Continue</button>
+                <button class="btn btn-dark" type="submit">Update</button>
             </div>
         </form>
         <div class="border-top pt-4">
-            <small class="text-muted">Already Registered With An Account?<a class="ml-3" href='#'>Sign In</a>
+            <small class="text-muted1">Already Registered With An Account?<a class="ml-3" href='#'>Sign In</a>
             </small>
         </div>
     </div>

@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .forms import UserRegisterForm
+from .forms import UserRegisterForm, AccountUpdateForm, ProfileFormUpdate
 
 def account_signup(request):
     """
@@ -15,7 +15,7 @@ def account_signup(request):
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, f'Account has been created for {username}!')
-            return redirect('homepage')
+            return redirect('login')
     else:
         form = UserRegisterForm()
     return render(request, 'accounts/signup.html', {'form' : form})
@@ -55,6 +55,23 @@ def logout_view(request):
 @login_required(login_url="/accounts/login/")
 def profile_view(request):
     """
-    Shows the Users profile
+    Shows the Users profile only if logged in
     """
-    return render(request, 'accounts/profile.html')
+    if request.method == 'POST':
+        account_form = AccountUpdateForm(request.POST, instance=request.user)
+        profile_form = ProfileFormUpdate(request.POST, request.FILES, instance=request.user.profile)
+        if account_form.is_valid() and profile_form.is_valid():
+            account_form.save()
+            profile_form.save()
+            messages.success(request, f'Your account has been saved!')
+            return redirect('profile')
+    else:
+        account_form = AccountUpdateForm(instance=request.user)
+        profile_form = ProfileFormUpdate(instance=request.user.profile)
+    
+    context = {
+        'account_form' : account_form,
+        'profile_form' : profile_form
+    }
+
+    return render(request, 'accounts/profile.html', context)
