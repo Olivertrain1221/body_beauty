@@ -17,7 +17,7 @@
             <div class="card-body">
                 <a class="card-text " href="{% url 'tattooposts:post_detail' slug=tattoopost.slug %}">
                     {{ tattoopost.title }}</a>
-                <a class="card-text" href="#">{{ tattoopost.info|truncatechars:20 }}</a>
+                <a class="card-text" href="#">{{ tattoopost.info|truncatechars:50 }}</a>
             </div>
         </div>
         {% endfor %}

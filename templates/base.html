@@ -72,26 +72,26 @@
     {% endblock %}
   </div>
   <footer class=" footer navbar navbar-expand-lg navbar-dark bg-dark ">
-    <ul class="navbar-nav ms-4 me-auto mb-2 mb-lg-0">
+    <ul class="navbar-nav mx-auto gap-1 gap-md-4 mb-2 mb-lg-0 flex flex-column flex-md-row justify-content-center">
       <li class="nav-item">
-        <a class="nav-link active footer" aria-current="page" href="{% url 'homepage' %}">Home</a>
+        <a class="text-decoration-none active footer" aria-current="page" href="{% url 'homepage' %}">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link footer" href="{% url 'about' %}">About Us</a>
+        <a class="text-decoration-none footer" href="{% url 'about' %}">About Us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link footer" href="{% url 'tattooposts:gallery' %}+">Gallery</a>
+        <a class="text-decoration-none footer" href="{% url 'tattooposts:gallery' %}+">Gallery</a>
       </li>
       {% if user.is_authenticated%}
       <li class="nav-item">
-        <a class="nav-link footer" href="{% url 'accounts:logout' %}">Logout</a>
+        <a class="text-decoration-none footer" href="{% url 'accounts:logout' %}">Logout</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link footer" href="{% url 'accounts:profile' %}">Profile</a>
+        <a class="text-decoration-none footer" href="{% url 'accounts:profile' %}">Profile</a>
       </li>
       {% else %}
       <li class="nav-item">
-        <a class="nav-link footer" href="{% url 'accounts:login' %}">Login</a>
+        <a class="text-decoration-none footer" href="{% url 'accounts:login' %}">Login</a>
       </li>
       {% endif %}
     <span class="navbar-text">

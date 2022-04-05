@@ -3,24 +3,34 @@ from.models import TattooPost
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from . import forms
+from django.views.generic import (
+    ListView,
+    DetailView,
+    CreateView
+)
 
 # Create your views here.
 
 
-def tattoo_gallery(request):
-    """
-    Runs the url.py tattoo_gallery
-    """
-    tattooposts = TattooPost.objects.all().order_by('date')
-    return render(request, 'tattooblog/tattoo_gallery.html', {'tattooposts': tattooposts})
+class TattooListView(ListView):
+    model = TattooPost
+    template_name = 'tattooblog/tattoo_gallery.html'  
+    context_object_name = 'tattooposts'
+    ordering = ['-date']
+## <app>/<model>_<viewtype>.html
+
+class TattooDetailListView(DetailView):
+    model = TattooPost
+    template_name = 'tattooblog/tattoopost_detail.html'
+    context_object_name = 'post'
 
 
-def tattoo_gallery_detail(request, slug):
-    """
-    Enables the view of each post
-    """
-    tattoopost = TattooPost.objects.get(slug=slug)
-    return render(request, 'tattooblog/tattoopost_detail.html', {'post': tattoopost})
+class CreatePostView(CreateView):
+    model = TattooPost
+    fields = ['titls', 'content']
+
+
+## <app>/<model>_<viewtype>.html
 
 
 @login_required(login_url="/accounts/login/")
