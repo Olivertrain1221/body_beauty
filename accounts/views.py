@@ -62,12 +62,17 @@ def profile_view(request):
     if request.method == 'POST':
         account_form = AccountUpdateForm(request.POST, instance=request.user)
         profile_form = ProfileFormUpdate(request.POST, request.FILES, instance=request.user.profile)
+
         if account_form.is_valid() and profile_form.is_valid():
             account_form.save()
             profile_form.save()
             messages.success(request, 'Your account has been saved!')
             return redirect('accounts:profile')
-    
+
+    else:
+        account_form = AccountUpdateForm(instance=request.user)
+        profile_form = ProfileFormUpdate(instance=request.user.profile)
+
     context = {
         'account_form' : account_form,
         'profile_form' : profile_form

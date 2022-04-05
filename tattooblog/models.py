@@ -1,6 +1,7 @@
 from django.db import models
 from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User
+from django.utils.text import slugify
 
 # Create your models here.
 class TattooPost(models.Model):
@@ -19,3 +20,10 @@ class TattooPost(models.Model):
 
     def info(self):
         return self.body
+
+    def __init__(self, *args, **kwargs):
+        super(TattooPost, self).__init__(*args, **kwargs)
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super(TattooPost, self).save(*args, **kwargs)

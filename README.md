@@ -1,31 +1,68 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Body Beauty
 
-Welcome Olivertrain1221,
+## Introduction
+Body Beauty is a website built in Django using Python, JavaScript, CSS and HTML. It is a site that allows a user to to see and share the Tattoo artists work at that store from real time users due to it having a built in blog. Users are able to create posts for the world to see. along with there own profile!
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+This is My(Oliver Train) fourth project for the Code Institute Diploma in Software Development with eCommerce.
 
-## Reminders
+The site provides role based permissions for users to interact with a central dataset. It includes user authentication, email validation, and Full CRUD functionality for there posts and User Profiles.
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+![Screenshot of homepage]()
 
-## Creating the Heroku app
+[View the live website on Heroku]()
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+Please note: To open any links in this document in a new browser tab, please press CTRL + Click.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+## Table of Contents
+* [User Experience Design (UX)](#UX)
+    * [The Strategy Plane](#The-Strategy-Plane)
+        * [Site Goals](#Site-Goals)
+        * [Epics](#Epics)
+        * [User Stories](#User-Stories)
+    * [The Scope Plane](#The-Scope-Plane)
+    * [The Structure Plane](#The-Structure-Plane)
+        * [Opportunities](#Opportunities)
+    * [The Skeleton Plane](#The-Skeleton-Plane)
+        * [Wireframes](#Wireframe-mockups)
+        * [Database Schema](#Database-Schema)
+    * [The Surface Plane](#The-Surface-Plane)
+* [Features](#features)
+* [Future Enhancements](#future-enhancements)
+* [Technologies Used](#technologies-used)
+* [Testing](#testing)
+* [Deployment](#deployment)
+* [Credits](#credits)
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+## UX
+### The Strategy Plane
+*  Body Beauty is intended to be a friendly site for users to create and share their own Tattoos with others in the sociable gallery page. Users will also be able to add, delete there own posts and view all the tattoos created by tattoo artists and current artists works from the shop.
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+##### The Sites Ideal User
+* Tattoo artists wanting to share there tattoos
+* Someone looking to get inspiration over there tattoos
+* Someone looking to share there own tattoos to the world
 
-Connect your GitHub repository and deploy as normal.
+#### Site Goals
 
-## Constraints
+* To provide business owner more business due to advertisement via posts
+* To provide users with a place to share their own Tattoos
+* To provide users with a place to discover new tattoos and gain inspiration to a potential new idea
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+#### Epics
 
------
-Happy coding!
+5 Epics were created which were then further developed into 13 User Stories. The details on each epic, along with the user stories linked to each one can be found in the project kanban board [here](https://github.com/Olivertrain1221/body_beauty/projects/1)
+
+1. Initial Django setup [#1](https://github.com/Olivertrain1221/body_beauty/issues/3)
+2. Account Creation [#2](https://github.com/Olivertrain1221/body_beauty/issues/4)
+2. Account Login [#3](https://github.com/Olivertrain1221/body_beauty/issues/5)
+2. User Posts [#4](https://github.com/Olivertrain1221/body_beauty/issues/6)
+2. Edit/delete Users Posts [#5](https://github.com/Olivertrain1221/body_beauty/issues/7)
+
+### User Stories
+
+From the Epics, 13 User Stories were developed. Each story was then given also  was assigned a classification of Must-Have, Should-Have, Could-Have. Each story was also assigned its own points that could be broken further this allowed me the chance to understand how the site was developing and also allow time planning which I consistently tried to work toward.
+
+<!-- 
+
+<!-- 
+### The Scope Plane -->
