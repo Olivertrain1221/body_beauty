@@ -1,13 +1,11 @@
-from django.shortcuts import redirect, render
 from.models import TattooPost
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.decorators import login_required
-from . import forms
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import (
     ListView,
     DetailView,
     UpdateView,
-    CreateView
+    CreateView,
+    DeleteView
     )
 
 # Create your views here.
@@ -18,6 +16,7 @@ class TattooListView(ListView):
     template_name = 'tattooblog/tattoo_gallery.html'  
     context_object_name = 'tattooposts'
     ordering = ['-date']
+    paginate = []
 ## <app>/<model>_<viewtype>.html
 
 class TattooDetailListView(DetailView):
@@ -26,40 +25,40 @@ class TattooDetailListView(DetailView):
     context_object_name = 'post'
 
 
-
-## <app>/<model>_<viewtype>.html
-
-
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = TattooPost
+    template_name = 'tattooblog/tattoo_post_create.html'  
     fields = ['title', 'body', 'image']
+    success_url = '/'
 
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
-# @login_required(login_url="/accounts/login/")
-# def tattoo_create(request):
-#     """
-#     Allows the user to go to create a post
-#     and saves to database once user has been confirmed
-#     """
-#     if request.method == 'POST':
-#         form = forms.CreatePost(request.POST, request.FILES)
-#         if form.is_valid():
-#             case = form.save(commit=False)
-#             case.author = request.user
-#             case.save()
-#             return redirect('tattooposts:gallery')
-#     else:
-#         form = forms.CreatePost()
-#     return render(request, 'tattooblog/tattoo_post_create.html', {'form': form })
 
-
-class UpdatePostView(LoginRequiredMixin, UpdateView):
+class UpdatePostView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = TattooPost
     fields = ['title', 'body', 'image']
+    template_name = 'tattooblog/tattoopost_form.html'  
+    success_url = '/'
 
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+    
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == post.author:
+            return True
+        return False
+
+
+class DeleteAPostView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = TattooPost
+    success_url = '/'
+
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == post.author:
+            return True
+        return False

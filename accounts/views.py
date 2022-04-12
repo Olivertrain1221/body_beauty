@@ -34,7 +34,7 @@ def login_view(request):
             if 'next' in request.POST:
                 return redirect(request.POST.get('next'))
             else:
-                return redirect('tattooposts:gallery')
+                return redirect('tattooposts:tattoo_gallery')
     else:
         form = AuthenticationForm()
     return render(request, 'accounts/login.html', {'form': form})
