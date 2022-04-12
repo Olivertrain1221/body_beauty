@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load cloudinary %}
+
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    <fieldset class="form-group">
+        <legend class="border-bottom mb-4">YOUR ABOUT TO LEAVE FOR GOOD!!!!</legend>
+            <p>Are you sure you want to delete your account?  This will permanently delete your
+               profile and any content you have generated.</p>
+            {{ form }}
+    </fieldset>
+    <div class="form-group">
+        <button class="btn btn-danger" type="submit">Delete Account</button>
+            <a class="btn btn-primary-custom" style="float:right;" 
+               href="{% url 'accounts:profile' %}">Cancel</a>
+    </div>
+</form>
+
+{% endblock %}

@@ -3,7 +3,8 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .forms import UserRegisterForm, AccountUpdateForm, ProfileFormUpdate
+from requests import delete
+from .forms import UserRegisterForm, AccountUpdateForm, ProfileFormUpdate, DeleteUserForm
 
 def account_signup(request):
     """
@@ -79,3 +80,23 @@ def profile_view(request):
     }
 
     return render(request, 'accounts/profile.html', context)
+
+
+def delete_profile(request):
+    """
+    deletes the profile view
+    """
+    if request.method == 'POST':
+        delete_form  = DeleteUserForm(request.POST, instance=request.user)
+        user = request.user
+        user.delete()
+        messages.info(request, 'Your profile has been deleted.')
+        return redirect('accounts:signup')
+    else:
+        delete_form = DeleteUserForm(instance=request.user)
+
+    context = {
+        'delete_form': delete_form
+    }
+
+    return render(request, 'accounts/delete_account.html')
