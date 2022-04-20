@@ -17,7 +17,6 @@ class TattooListView(ListView):
     context_object_name = 'tattooposts'
     ordering = ['-date']
     paginate = []
-## <app>/<model>_<viewtype>.html
 
 class TattooDetailListView(DetailView):
     model = TattooPost

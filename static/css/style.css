@@ -115,6 +115,7 @@ body {
     text-align: center;
     width: 100%;
     display: flex;
+    color:rgb(138, 151, 163);
 }
 
 .footer > li {
