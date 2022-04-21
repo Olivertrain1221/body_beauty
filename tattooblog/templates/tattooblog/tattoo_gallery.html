@@ -8,7 +8,7 @@
         Welcome to the gallery! the tattoo post heaven post and share your images here with the everyone"
     </h2>
     {% if user.is_authenticated%}
-    <a class="bg-dark create-a-post" href="{% url 'tattooposts:tattoo_post_create' %}">Click here to add your art!</a>
+    <button class="bg-dark create-a-post" href="{% url 'tattooposts:tattoo_post_create' %}">Click here to add your art!</button>
     {% endif %}
     <div class="post">
         {% for tattoopost in tattooposts %}
@@ -21,7 +21,7 @@
                 <a class="text-decoration-none" href="{% url 'tattooposts:tattoopost_detail' slug=tattoopost.slug %}">
                     <h4>{{ tattoopost.title }}</h4>
                 </a>
-                <p>{{ tattoopost.info|truncatechars:75 }}</p>
+                <p class="gallery-bio-text">{{ tattoopost.info|truncatechars:75 }}</p>
             </div>
             <div class="card__footer">
                 <div class="user">

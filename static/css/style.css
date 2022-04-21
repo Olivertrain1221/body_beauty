@@ -150,19 +150,7 @@ img {
     justify-content: center;
     align-items: center;
     width: 100%;
-  }
- 
-  .card {
-    display: flex;
-    flex-direction: column;
-    width: clamp(20rem, calc(20rem + 2vw), 22rem);
-    overflow: hidden;
-    box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
-    border-radius: 1em;
-    background: #ECE9E6;
-    background: linear-gradient(to right, #FFFFFF, #ECE9E6);
-    max-height: 400px;
-  }
+}
   
 .card {
     display: flex;
@@ -173,7 +161,7 @@ img {
     border-radius: 1em;
     background: #ECE9E6;
     background: linear-gradient(to right, #FFFFFF, #ECE9E6);
-    max-height: 400px;
+    max-height: 500px;
   }
   
 .card__header {
@@ -185,68 +173,69 @@ img {
     display: flex;
     flex-direction: column;
     gap: .5rem;
-    color: grey
-  }
+    color: grey;
+    overflow: hidden;
+}
   
 .card-image {
     max-width: 100%;
     height: 100%;
     justify-content: center;
     display: flex;
-  }
-  
+}  
+
 .tag {
     align-self: flex-start;
     padding: .25em .75em;
     border-radius: 1em;
     font-size: .75rem;
-  }
+}
   
 .tag + .tag {
     margin-left: .5em;
-  }
+}
   
 .tag-blue {
     background: #56CCF2;
     background: linear-gradient(to bottom, #2F80ED, #56CCF2);
     color: #fafafa;
-  }
+}
   
 .tag-brown {
     background: #D1913C;
     background: linear-gradient(to bottom, #FFD194, #D1913C);
     color: #fafafa;
-  }
+}
   
 .tag-red {
     background: #cb2d3e;
     background: linear-gradient(to bottom, #ef473a, #cb2d3e);
     color: #fafafa;
-  }
-  
+}
+
 .card__body h4 {
     font-size: 1.5rem;
     text-transform: capitalize;
     color: grey;
-  }
+}
   
 .card__footer {
     display: flex;
     padding: 1rem;
     margin-top: auto;
     color: grey;
-  }
+}
   
 .user {
     display: flex;
     gap: .5rem;
-  }
+}
   
 .user__image {
     max-width: 20%;
     border-radius: 50%;
-  }
+}
   
 .user__info > small {
     color: #666;
-  }
+}
