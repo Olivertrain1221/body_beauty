@@ -8,7 +8,7 @@
         Welcome to the gallery! the tattoo post heaven post and share your images here with the everyone"
     </h2>
     {% if user.is_authenticated%}
-    <a class="" href="{% url 'tattooposts:tattoo_post_create' %}">Click here to add your art!</a>
+    <a class="bg-dark create-a-post" href="{% url 'tattooposts:tattoo_post_create' %}">Click here to add your art!</a>
     {% endif %}
     <div class="post">
         {% for tattoopost in tattooposts %}

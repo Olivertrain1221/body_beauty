@@ -72,6 +72,13 @@ body {
     display: none;
 }
 
+.create-a-post {
+    color:slategray;
+    border: 2px;
+    text-decoration: none;
+
+}
+
 .text-muted1 {
     color: white;
     text-decoration: none;
@@ -93,7 +100,6 @@ body {
 
 .homepage-text {
     font-family: 'Comic Neue', cursive;
-    font-size: 10px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -107,7 +113,6 @@ body {
     width: 100%;
     margin-top: 20px;
     text-align: center;
-    font-size: 30px;
 }
 
 
@@ -141,11 +146,22 @@ body {
 }
   
 img {
-    max-width: 100%;
     object-fit: cover;
     justify-content: center;
     align-items: center;
     width: 100%;
+  }
+ 
+  .card {
+    display: flex;
+    flex-direction: column;
+    width: clamp(20rem, calc(20rem + 2vw), 22rem);
+    overflow: hidden;
+    box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 1em;
+    background: #ECE9E6;
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+    max-height: 400px;
   }
   
 .card {

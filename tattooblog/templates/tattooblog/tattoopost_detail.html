@@ -5,13 +5,13 @@
 
 <div class="tattoopost-detail">
     <div class="post">
-        <div class="card">
+        <div class="card-detail">
             <div class="card-img-top" alt="User posts">{% cloudinary post.image %}</div>
             <div class="card-body">
-                <a class="card-text " href="#">{{ post.title }}</a>
-                <a class="card-text" href="#">{{ post.body }}</a>
-                <a class="card-text" href="#">{{ post.date }}</a>
-                <a class="card-text" href="#">{{ post.author }}</a>
+                <p class="card-text" href="#">{{ post.title }}</p>
+                <p class="card-text" href="#">{{ post.body }}</p>
+                <p class="card-text" href="#">{{ post.date }}</p>
+                <p class="card-text" href="#">{{ post.author }}</p>
                 {% if object.author == user %}
                 <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'tattooposts:post_update' object.slug %}">Update</a>
                 <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'tattooposts:tattoopost_confirm_delete' object.slug %}">Delete</a>

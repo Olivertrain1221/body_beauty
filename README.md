@@ -62,7 +62,79 @@ Please note: To open any links in this document in a new browser tab, please pre
 
 From the Epics, 13 User Stories were developed. Each story was then given also  was assigned a classification of Must-Have, Should-Have, Could-Have. Each story was also assigned its own points that could be broken further this allowed me the chance to understand how the site was developing and also allow time planning which I consistently tried to work toward.
 
-<!-- 
+python3 -m http.servergit pushgit pushgit commit -m "git commit -m "git commit -mg i"t push
+These are the user stories that were completed within the project's first release, by Epic.
 
-<!-- 
-### The Scope Plane -->
+	* US#8 - As a User, I can create a login to the site so that I can move around the site and look at the images and posts from various other users.
+	* US#1 - As a User, I can Navigate successfully around the site so that the User experience is rewarding.
+	* US#2 - As a User, I can Post images to a user gallery of my tattoos so that they can be shared with others.
+	
+	* US#8 - As a User I can Create a login to the site so that I can move around the site and look at the corresponding images posted by users**
+	* US#9 - As a User I can see whether I am currently logged in to the site and also create an account if not registered so that I can use the site to its full potential
+	* US#10 - As a User I can view my profile and delete my profile so that I have control of my own account
+	* US#11 - As a User I can Change my password so that If I forget my password I will be able to change it to continue accessing the site
+	* US#12 - As a User I can Logout so that I can exit the site knowing my account is safe
+	* US#13 - As a User I can use other trusted sites with a login/autofill. GMAIL, Facebook, YouTube so that Easy signup easy encouragement
+	* US#14 - As a User I can View all the photos of the tattoos so that I can get influence and exposure to new tattoos
+	* US#15 - As a User I can like pictures that others post so that I can then keep a record of what I liked
+	* US#16 - As a User I can Search so that I can see images from most recent to oldest first.
+	* US#17 - As a User I can Ensure that what I will see is suitable for the website so that I feel comfortable
+	* US#18 - As a User I can view the site on my laptop and Iphone so that I can keep looking at potential tattoos
+
+### The Scope Plane
+
+**Features planned:**
+* User Profile - Create, Read, Update and Delete (Basic CRUD functionality)
+* Posts - Users can create, update and delete their own posts onto the site 
+* Other Users Posts - Users can see and look at the other posts that users have shared
+* Users can login to their account, change their password or their email and profile image
+* Users can reset their password if they forget it.
+* Users can logout of their account
+* Users need to be registered and logged in to be able to post and contribute to the gallery page
+* Responsive Design - the site needs to be fully responsive so the site can be checked and contributed to by users with various devices.
+
+
+### The Structure Plane
+
+The Structure Plane was modeled upon the user stories for the site. Each user story had a clear and concise objective towards the successful completion of the site you can find each of the Stories is listed above, If you would like to also read the Acceptance criteria that were written to try and ensure that the User’s Story is met and nothing is missed at what is required to meet this. I also wrote out the implementation of what was done in order for it to be successful within the project. 
+
+The above Acceptance Criteria and Implementation process followed can be read and viewed on my Github within the [issues](https://github.com/Olivertrain1221/body_beauty/issues) tab of the project.
+
+#### Opportunities
+
+Arising from user stories
+| Opportunities | Importance | Viability / Feasibility
+| ------ | :------: | :------: |
+| ** Provide users the ability to create an account ** | 5 | 5 |
+| ** Provide users the ability to create a post ** | 5 | 5 |
+| ** Provide users the ability to edit a post ** | 5 | 5 |
+| ** Provide users the ability to view posts ** | 5 | 5 |
+| ** Provide users the ability to delete their own posts ** | 5 | 5 |
+| ** Provide users the ability to edit their account ** | 5 | 5 |
+| ** Provide users the ability to delete their account ** | 5 | 5 |
+| ** Provide users the ability to access the site on any device ** | 5 | 5 |
+
+
+### The Skeleton Plane
+#### Wireframe mock-ups
+
+Home page: The home page provides the user with a clear and welcoming page to the site and allows users to understand quickly the overall purpose of the site. The welcome message is clearly visible to the user when they first arrive at the site regardless of the device they are using. ![Recipe Detail Desktop Wireframe]()
+
+![Home Page Wireframe]()
+
+About page: The about page sheds some history and information regarding the shop and also gives the user the chance to learn about what the shop and the overall site have to offer to users.
+
+![About Page Wireframe]()
+
+Users also have the ability to sign up to the site which automatically creates a profile for them. From this profile, users can change any of the information they originally supplied upon signup, also allowing them to add a profile image.
+
+![User Profile Desktop Wireframe]()
+
+Users that aren't registered with the site have the ability to view any posts made by other users which are displayed on the sites ‘gallery’. The posts are shown from newest to oldest so users have a constant relay of fresh posts.
+
+![Gallery Page not Registered desktop wireframe]()
+
+Users that are registered with the site have the extra ability to share their own posts to the site for other users to view.
+
+
+Wireframes were also produced for the main major pages for the idealistic mobile view, for both mobile and tablet devices. With the intention of the site being fully responsive so that no matter the device size the user is viewing the site on, it will display accordingly.
