@@ -138,3 +138,34 @@ Users that are registered with the site have the extra ability to share their ow
 
 
 Wireframes were also produced for the main major pages for the idealistic mobile view, for both mobile and tablet devices. With the intention of the site being fully responsive so that no matter the device size the user is viewing the site on, it will display accordingly.
+
+#### Database Schema
+
+As predicted when making a django site, certain custom models are required to be made in order for the site to work. I spent time thinking about what would be required in the models for the site to work smoothly as well as the type of relationships required between them
+
+In order for the users of the site to be able to create Tattoo Posts and share there ideas and designs, a members model was also required for the posts and also a users for the logging in which was linked.
+
+![Database Schema Diagram]()
+
+### The Surface Plane
+
+#### Design
+
+Once I had basic page functionality and had things displaying on the pages I began to style my wireframes. A few changes happened during development that means the gallery page is also given a detail page, this shows the full user's bio on that particular post and also allows the user to be able to delete it. I ensured that the color themes were accessible to all of the users that may visit the site.
+
+##### Typography 
+Comin Neue was my chosen font for the sites page due to it being a nice clear precise font and made it easier to read for all users the colors used were a white 
+
+##### Images
+Several images that were used were on the pexels website, I used select images to fit into shop itself.
+
+## Features
+#### Home page
+A welcoming homepage was built to welcome the user to the site and clearly convey the sites purpose. The call to action for the user to search for recipes is at the top of the main page, with a large, hero like welcome message appearing just below. At the bottom of the page a clear comparison showing users the benefits of signing up to the site is displayed.
+
+![Home Page](
+
+#### Navigation Bar
+The main navigation bar appears at the top of the page, clearly displaying the main navigational links users would require.
+
+![Logged in User Nav Bar]()
