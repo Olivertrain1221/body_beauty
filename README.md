@@ -169,3 +169,112 @@ A welcoming homepage was built to welcome the user to the site and clearly conve
 The main navigation bar appears at the top of the page, clearly displaying the main navigational links users would require.
 
 ![Logged in User Nav Bar]()
+
+
+A user is given an option to login at the top of the screen and then changes to the logout depending on the current state of the user.
+
+The Users that are not logged in are able to access the gallery still however don't have the option to post their photos and images to the site. 
+
+![logged in user nave bar user menu open]()
+
+The navigation bar and the user menu are fully responsive, adapting to narrower devices by appearing from the right hand side of the screen when the menu button is pressed.
+
+![mobile user menu open]()
+
+#### Footer
+A normal common footer was used throughout the site as part of the base.html , this allowed the site to flow and also look neat.
+
+![footer]()
+
+
+#### Tattoo Posts Cards
+When on the gallery page the posts are shown in a card format this allows a unison way of posts and allows the user to post any size image and for it to be scaled accordingly. 
+
+##### Standard Gallery Post Card
+![Standard Galler Post Card]()
+
+##### Selected Individual Post
+![Selected Post]()
+
+
+#### User Profile
+Users have the choice to add to there profile. When a User creates a login and profile is already made for them and they are given editable fields they are not supplied a profile image until they upload one. The user profile page provides the profile owner with quick access to edit and delete functionality.
+
+![Users Profile Page]()
+
+
+#### Editing a Post
+From the gallery page, should they choose an image they like, they can then click the post and it will take them to the post and display more detail with a full bio, opposed to the smaller blurb given on the main gallery page.
+## Future Enhancements
+There are many key enhancement that as my knowledge explands i would love to introduce into this site. Some of the key enhancements I want to add are listed below. These enhancements will help to create a much more sophisticated site.
+The key areas I would like to add to the site in the future are:
+* The ability for users to search the sites gallery page for images they want
+* The ability for users to comment on posts and share their thoughts onto the tattoos.
+* The ability for users to login via social networks such as google or facebook
+
+## Testing
+
+### Testing Strategy
+When testing my site i proceeded to use the “manual testing” procedure as I found this the easiest way to understand and ensure competent testing is carried out. The tests carried out can be seen below.
+
+
+#### Testing Overview
+
+When testing this Project I divided it into different sections this was done therefor to ensure that basic test were written and validated within what the terms of the code was written for.
+
+[My testing overvie]()
+
+A full detailed breakdown of the testing procedures and methodology can be found in the testing.md file [here](TESTING.md)
+
+#### Validator Testing
+All of my code was Passed validation but had 0 warnings.
+*ADD WARNINGS
+
+#### Notable Bugs
+
+Development bugs: One major bug i experienced was when i was linking the authors profile image to the post, opposed to the profile image of someone logged in. You would have thought a simple fix upon changing the models but was being presented with an error, on the live site when trying to create a use as well from then on, this was found to be due to the database crashing in some form. It was handing out the same UUID in the fault code presented to myself and my mentor. Upon a final decision to revert back, it still did not work. This then resulted in the database crashing in some form. When navigating through Heroku we found in their latest update they had released a “Reset” button on the postgres database. After a simple 10 seconds the database had reset but left the table.
+There are no known bugs left in the site.
+
+#### Technologies Used
+
+* Python
+    * The following python modules were used on this project:
+* asgiref==3.5.0
+* astroid==2.9.3
+* certifi==2021.10.8
+* charset-normalizer==2.0.12
+* cloudinary==1.29.0
+* colorama==0.4.4
+* dj-database-url==0.5.0
+* dj3-cloudinary-storage==0.0.6
+* Django==3.2
+* django-crispy-forms==1.14.0
+* gunicorn==20.1.0
+* idna==3.3
+* isort==5.10.1
+* lazy-object-proxy==1.7.1
+* mccabe==0.6.1
+* Pillow==9.0.1
+* platformdirs==2.5.1
+* psycopg2==2.9.3
+* pylint==2.12.2
+* pytz==2021.3
+* requests==2.27.1
+* six==1.16.0
+* sqlparse==0.4.2
+* toml==0.10.2
+* urllib3==1.26.8
+* wrapt==1.13.3
+
+* Django
+    * Django was used as the main python framework in the development of this project
+    * Django AllAuth was utilised to provide enhanced user account management functionality.
+* Heroku
+    * Was used as the cloud based platform to deploy the site on
+* Heroku PostgreSQL
+    * Heroku PostgreSQL was used as the database for this project during development and in production.
+* JavaScript
+    *   Various Scripts for website functionality
+*  Bootstrap 5.13
+    * Bootstrap was used for general layout and spacing requirements for the site.
+* Font Awesome
