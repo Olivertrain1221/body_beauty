@@ -4,9 +4,7 @@
 
 {% block content %}
 <div class="tattooposts">
-    <h1 class="centeralign slogan mt-5">
-        Welcome to Body Beauty, where the easel is your skin.
-    </h1>
+    <h1 class="centeralign slogan mt-5">Welcome to Body Beauty, where the easel is your skin.</h1>
     {% if user.is_authenticated%}
     <a class="add-art m-4" href="{% url 'tattooposts:tattoo_post_create' %}">Click here to add your art!
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
