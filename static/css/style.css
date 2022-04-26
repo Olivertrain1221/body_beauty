@@ -151,6 +151,13 @@ img {
     align-items: center;
     width: 100%;
 }
+
+.add-art {
+    width:100%;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
   
 .card {
     display: flex;

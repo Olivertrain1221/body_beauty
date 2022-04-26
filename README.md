@@ -120,11 +120,11 @@ Arising from user stories
 
 Home page: The home page provides the user with a clear and welcoming page to the site and allows users to understand quickly the overall purpose of the site. The welcome message is clearly visible to the user when they first arrive at the site regardless of the device they are using. ![Recipe Detail Desktop Wireframe]()
 
-![Home Page Wireframe]()
+![Home Page Wireframe](/static/documentation/wireframes/homepage.png)
 
 About page: The about page sheds some history and information regarding the shop and also gives the user the chance to learn about what the shop and the overall site have to offer to users.
 
-![About Page Wireframe]()
+![About Page Wireframe](/static/documentation/wireframes/about-contact.png)
 
 Users also have the ability to sign up to the site which automatically creates a profile for them. From this profile, users can change any of the information they originally supplied upon signup, also allowing them to add a profile image.
 
@@ -133,6 +133,10 @@ Users also have the ability to sign up to the site which automatically creates a
 Users that aren't registered with the site have the ability to view any posts made by other users which are displayed on the sites ‘gallery’. The posts are shown from newest to oldest so users have a constant relay of fresh posts.
 
 ![Gallery Page not Registered desktop wireframe]()
+
+Users that are registered with the site have the extra ability to share their own posts to the site for other users to view.
+
+![Gallery Page Users that are logged in]()
 
 Users that are registered with the site have the extra ability to share their own posts to the site for other users to view.
 
