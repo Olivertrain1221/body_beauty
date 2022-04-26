@@ -35,6 +35,7 @@ def login_view(request):
             if 'next' in request.POST:
                 return redirect(request.POST.get('next'))
             else:
+                messages.info(request, 'You are successfully logged in!')
                 return redirect('tattooposts:tattoo_gallery')
     else:
         form = AuthenticationForm()
@@ -48,6 +49,7 @@ def logout_view(request):
     """
     if request.method == 'POST':
         logout(request)
+        messages.info(request, 'Your have been Logged Out.')
         return redirect('homepage')
     form = AuthenticationForm()
     return render(request, 'accounts/logout.html', {'form': form})
@@ -67,7 +69,7 @@ def profile_view(request):
         if account_form.is_valid() and profile_form.is_valid():
             account_form.save()
             profile_form.save()
-            messages.success(request, 'Your account has been saved!')
+            messages.info(request, 'Profile Updated Successfully.')
             return redirect('accounts:profile')
 
     else:
@@ -90,7 +92,7 @@ def delete_profile(request):
         delete_form  = DeleteUserForm(request.POST, instance=request.user)
         user = request.user
         user.delete()
-        messages.info(request, 'Your profile has been deleted.')
+        messages.warning(request, 'Your profile has been deleted.')
         return redirect('accounts:signup')
     else:
         delete_form = DeleteUserForm(instance=request.user)
