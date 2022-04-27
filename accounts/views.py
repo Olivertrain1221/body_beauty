@@ -1,10 +1,14 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from requests import delete
-from .forms import UserRegisterForm, AccountUpdateForm, ProfileFormUpdate, DeleteUserForm
+from .forms import (UserRegisterForm,
+                    AccountUpdateForm,
+                    ProfileFormUpdate,
+                    DeleteUserForm
+                    )
+
 
 def account_signup(request):
     """
@@ -15,11 +19,12 @@ def account_signup(request):
         if form.is_valid():
             username = form.cleaned_data.get('username')
             form.save()
-            messages.success(request, f'Account has been created for {username}!')
+            mess = f"Account had been created for {username}!"
+            messages.success(request, mess)
             return redirect('accounts:login')
     else:
         form = UserRegisterForm()
-    return render(request, 'accounts/signup.html', {'form' : form})
+    return render(request, 'accounts/signup.html', {'form': form})
 
 
 # Creates the login_view
@@ -63,8 +68,11 @@ def profile_view(request):
     profile_form = ProfileFormUpdate(instance=request.user.profile)
     account_form = AccountUpdateForm(instance=request.user)
     if request.method == 'POST':
-        account_form = AccountUpdateForm(request.POST, instance=request.user)
-        profile_form = ProfileFormUpdate(request.POST, request.FILES, instance=request.user.profile)
+        account_form = AccountUpdateForm(request.POST,
+                                         instance=request.user)
+        profile_form = ProfileFormUpdate(request.POST,
+                                         request.FILES,
+                                         instance=request.user.profile)
 
         if account_form.is_valid() and profile_form.is_valid():
             account_form.save()
@@ -77,8 +85,8 @@ def profile_view(request):
         profile_form = ProfileFormUpdate(instance=request.user.profile)
 
     context = {
-        'account_form' : account_form,
-        'profile_form' : profile_form
+        'account_form': account_form,
+        'profile_form': profile_form
     }
 
     return render(request, 'accounts/profile.html', context)
@@ -89,7 +97,7 @@ def delete_profile(request):
     deletes the profile view
     """
     if request.method == 'POST':
-        delete_form  = DeleteUserForm(request.POST, instance=request.user)
+        delete_form = DeleteUserForm(request.POST, instance=request.user)
         user = request.user
         user.delete()
         messages.warning(request, 'Your profile has been deleted.')

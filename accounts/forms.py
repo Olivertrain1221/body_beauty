@@ -29,5 +29,4 @@ class ProfileFormUpdate(forms.ModelForm):
 class DeleteUserForm(forms.ModelForm):
     class Meta:
         model = User
-        fields=[]
-        
+        fields = []
