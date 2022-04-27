@@ -222,19 +222,9 @@ When testing my site i proceeded to use the “manual testing” procedure as I 
 #### Testing Overview
 
 When testing this Project I divided it into different sections this was done therefor to ensure that basic test were written and validated within what the terms of the code was written for.
+A full detailed breakdown of the testing procedures and methodology can be found in the testing.md file [here](/TESTING.md)
 
-[My testing overview]()
 
-A full detailed breakdown of the testing procedures and methodology can be found in the testing.md file [here](TESTING.md)
-
-#### Validator Testing
-All of my code was Passed validation but had 0 warnings.
-*ADD WARNINGS
-
-#### Notable Bugs
-
-Development bugs: One major bug i experienced was when i was linking the authors profile image to the post, opposed to the profile image of someone logged in. You would have thought a simple fix upon changing the models but was being presented with an error, on the live site when trying to create a use as well from then on, this was found to be due to the database crashing in some form. It was handing out the same UUID in the fault code presented to myself and my mentor. Upon a final decision to revert back, it still did not work. This then resulted in the database crashing in some form. When navigating through Heroku we found in their latest update they had released a “Reset” button on the postgres database. After a simple 10 seconds the database had reset but left the table.
-There are no known bugs left in the site.
 
 #### Technologies Used
 
@@ -324,7 +314,7 @@ To deploy the project through Heroku I followed these steps:
 * In the settings.py file within the django app, `import Path from pathlib, import os and import dj_database_url`
 * insert the line `if os.path.isfile("env.py"): import env`
 * remove the insecure secret key that django has in the settings file by default and replace it with `SECRET_KEY = os.environ.get('SECRET_KEY')`
-* replace the databases section with DATABASES = { 'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))} ensure the correct indentation for python is used.
+* replace the databases section with `DATABASES = { 'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))}` ensure the correct indentation for python is used.
 * In the terminal migrate the models over to the new database connection
 * Navigate in a browser to cloudinary, log in, or create an account and log in. 
 * From the dashboard - copy the CLOUDINARY_URL to the clipboard
@@ -332,7 +322,7 @@ To deploy the project through Heroku I followed these steps:
 * In Heroku, add the CLOUDINARY_URL and value copied to the clipboard to the config vars
 * Also add the KEY - DISABLE_COLLECTSTATIC with the Value - 1 to the config vars
 * this key value pair must be removed prior to final deployment
-* Add the cloudinary libraries to the list of installed apps, the order they are inserted is important, 'cloudinary_storage' goes above 'django.contrib.staitcfiles' and 'cloudinary' goes below it.
+* Add the cloudinary libraries to the list of installed apps, the order they are inserted is important, `cloudinary_storage` goes above `django.contrib.staticfiles` and `cloudinary` goes below it.
 * in the Settings.py file - add the STATIC files settings - the url, storage path, directory path, root path, media url and default file storage path.
 * Link the file to the templates directory in Heroku `TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')`
 * Change the templates directory to TEMPLATES_DIR - 'DIRS': [TEMPLATES_DIR]
@@ -354,8 +344,15 @@ This can be done by:
 * type 'git clone' and paste the https link you copied from github
 * press enter and git will clone the repository to your local machine
 
-### Acknowledgements
+#### Installing requirements.txt
+Due to certian packages being required the system nneds to know which ones in order to runt his project as successfully as possible.
+* Everytime I installed a new package to use on the development I ran the command `pip freeze --local > requirements.txt`
+* This saves the current packages that are required to the requirements.txt file itself. 
 
+* However when Cloning or starting in a new workspaces the content(packages) within the requirements.txt will need to be installed this is done by the following command `pip install -r requirements.txt`
+
+
+### Acknowledgements
 I'd like to thank the following:
 * Tim Nelson - CI Mentor, various coding changes and help better my ability
 * Gwen Bradbury - Jr Developer, Styling issues and logic thinking
@@ -364,10 +361,6 @@ I'd like to thank the following:
 
 
 
-
-requriements.txt installation
-1 = locally is the pip command
-2= pip freeze local> requirements.txt
 
 responsiveness 
 browser compatiable
