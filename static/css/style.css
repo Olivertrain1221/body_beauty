@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
 html, body { height: 100%;}
@@ -27,17 +34,31 @@ body {
 }
 
 .tattooposts {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;    
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;    
+    -webkit-box-pack: center;    
+        -ms-flex-pack: center;    
+            justify-content: center;
     text-align: center;
 }
 /* profile styles */
 
 .profile-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;    
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;    
+    -webkit-box-pack: center;    
+        -ms-flex-pack: center;    
+            justify-content: center;
     text-align: center;
 }
 
@@ -129,36 +150,57 @@ body {
 .footer {
     text-align: center;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     color:rgb(138, 151, 163);
 }
 
 .footer > li {
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 
 .post {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     gap: 1rem;
 }
 
 .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     max-width: 1200px;
     margin-block: 2rem;
     gap: 2rem;
 }
   
 img {
-    object-fit: cover;
-    justify-content: center;
-    align-items: center;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 100%;
 }
 
@@ -170,13 +212,21 @@ img {
 }
   
 .card {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width: clamp(20rem, calc(20rem + 2vw), 22rem);
     overflow: hidden;
-    box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+            box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
     border-radius: 1em;
     background: #ECE9E6;
+    background: -webkit-gradient(linear, left top, right top, from(#FFFFFF), to(#ECE9E6));
+    background: -o-linear-gradient(left, #FFFFFF, #ECE9E6);
     background: linear-gradient(to right, #FFFFFF, #ECE9E6);
     max-height: 500px;
   }
@@ -190,8 +240,13 @@ img {
   
 .card__body {
     padding: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     gap: .5rem;
     color: grey;
     overflow: hidden;
@@ -200,12 +255,17 @@ img {
 .card-image {
     max-width: 100%;
     height: 100%;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }  
 
 .tag {
-    align-self: flex-start;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
     padding: .25em .75em;
     border-radius: 1em;
     font-size: .75rem;
@@ -217,18 +277,24 @@ img {
   
 .tag-blue {
     background: #56CCF2;
+    background: -webkit-gradient(linear, left top, left bottom, from(#2F80ED), to(#56CCF2));
+    background: -o-linear-gradient(top, #2F80ED, #56CCF2);
     background: linear-gradient(to bottom, #2F80ED, #56CCF2);
     color: #fafafa;
 }
   
 .tag-brown {
     background: #D1913C;
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFD194), to(#D1913C));
+    background: -o-linear-gradient(top, #FFD194, #D1913C);
     background: linear-gradient(to bottom, #FFD194, #D1913C);
     color: #fafafa;
 }
   
 .tag-red {
     background: #cb2d3e;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ef473a), to(#cb2d3e));
+    background: -o-linear-gradient(top, #ef473a, #cb2d3e);
     background: linear-gradient(to bottom, #ef473a, #cb2d3e);
     color: #fafafa;
 }
@@ -240,6 +306,8 @@ img {
 }
   
 .card__footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     padding: 1rem;
     margin-top: auto;
@@ -247,6 +315,8 @@ img {
 }
   
 .user {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: .5rem;
 }

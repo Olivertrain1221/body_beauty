@@ -16,8 +16,7 @@
         {% for tattoopost in tattooposts %}
         <div class="card shadow-lg">
             <div class="card__header">
-                <!-- <img src="https://source.unsplash.com/600x400/?car,automobile" alt="card__image" class="card__image" width="600"> -->
-                <div class="card-image" alt="card__image">{% cloudinary tattoopost.image %}</div>
+                <div class="card-image" >{% cloudinary tattoopost.image %}</div>
             </div>
             <div class="card__body">
                 <a class="text-decoration-none" href="{% url 'tattooposts:tattoopost_detail' slug=tattoopost.slug %}">
@@ -27,7 +26,7 @@
             </div>
             <div class="card__footer">
                 <div class="user">
-                    <img src="{{ tattoopost.author.profile_image.url }}" alt="userimage" class="user__image">
+                    <img src="{{ tattoopost.author.profile_image.url }}" class="user__image">
                     <div class="user__info">
                         <h5>{{ tattoopost.author }}</h5>
                     </div>

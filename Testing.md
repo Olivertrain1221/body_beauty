@@ -1,7 +1,23 @@
 #### Validator Testing
 Please see below the validation for each page
 
-*
+#### HTML Using Validator W3.org
+* Home page 0 errors, 0 warnings
+* About page 0 errors, 0 warning
+* Gallery page 1 error An img element must have an alt attribute, except under certain conditions. (Condition met due to it being import from cloudinary)
+* Individual Post page 1 error An img element must have an alt attribute, except under certain conditions. (Condition met due to it being import from cloudinary)
+* Profile page 1 error An img element must have an alt attribute, except under certain conditions. (Condition met due to it being import from cloudinary)
+* Login page 0 errors, 0 warning
+* Signup page 1 error, 0 warning Element ul not allowed as child of element small in this context, except under certain conditions. (Condition met due to it being import from built in Django framework)
+* Logout page 0 errors, 0 warning
+
+
+#### CSS Validator
+
+
+#### Python Validator
+
+
 
 #### Notable Bugs
 
