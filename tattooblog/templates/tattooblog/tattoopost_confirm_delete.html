@@ -7,9 +7,9 @@
     <h2>Delete Your post?</h2>
     <form class="post-form" method="POST">
         {% csrf_token %}
-        <h3>Are you sure you want to delete this post"{{ object.title }}"</h3>
-        <button class="btn btn-outline-danger" type="submit">Yes I want to Delete</button>
-        <a class="btn btn-outline-secondary" href="{% url 'tattooposts:tattoopost_detail' object.id %}">Cancel</a>
+        <h3>Are you sure you want to delete this post "{{ object.title }}"</h3>
+        <button class="btn btn-danger" type="submit">Yes I want to Delete</button>
+        <a class="btn btn-secondary" href="{% url 'tattooposts:tattoo_gallery' %}">Cancel</a>
     </form>
 </div>
 {% endblock %}

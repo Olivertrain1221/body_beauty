@@ -14,7 +14,7 @@ class TattooPost(models.Model):
     body = models.TextField(blank=True, null=True, max_length=500)
     image = CloudinaryField('image', default="https://res.cloudinary.com/dxsodecl1/image/upload/v1644248279/cld-sample.jpg")
     author = models.ForeignKey(Profile, default=None, on_delete=models.CASCADE)
- 
+
     def __str__(self):
         return self.title
 

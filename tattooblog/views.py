@@ -20,9 +20,16 @@ class TattooListView(ListView):
     ordering = ['-date']
     paginate = []
 
+
 class TattooDetailListView(DetailView):
     model = TattooPost
     template_name = 'tattooblog/tattoopost_detail.html'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        if Profile.objects.filter(user = self.request.user).exists():
+            profile = get_object_or_404(Profile, user=self.request.user)
+            context['profile'] = profile
+            return context
     context_object_name = 'post'
 
 
@@ -51,19 +58,19 @@ class UpdatePostView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     
     def test_func(self):
         post = self.get_object()
-        if self.request.user == post.author:
+        profile = get_object_or_404(Profile, user=self.request.user)
+        if profile == post.author:
             return True
         return False
 
 
 class DeleteAPostView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = TattooPost
-    success_url = '/'
+    success_url = '/tattooblog/'
 
     def test_func(self):
         post = self.get_object()
-        if self.request.user == post.author:
+        profile = get_object_or_404(Profile, user=self.request.user)
+        if profile == post.author:
             return True
         return False
-
-

@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
+html, body { height: 100%;}
+
+body > footer {
+  position: sticky;
+  top: 100vh;
+}
 
 body {
     font-family: 'Comic Neue', cursive;
@@ -14,6 +20,10 @@ body {
 
 .slogan {
     color: white;
+}
+
+#div_id_profile_image div *:not(:last-child){
+    display: none;
 }
 
 .tattooposts {
@@ -171,6 +181,9 @@ img {
     max-height: 500px;
   }
   
+.card-body {
+    text-align: center;
+}
 .card__header {
     height: 50%;
 }
