@@ -5,6 +5,9 @@ from PIL import Image
 
 
 class Profile(models.Model):
+    """
+    Main Model for the users profile
+    """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     profile_image = models.ImageField(default='blank.jpg',
                                       upload_to='profile_pics')
