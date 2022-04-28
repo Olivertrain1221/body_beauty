@@ -361,8 +361,3 @@ I'd like to thank the following:
 
 
 
-
-responsiveness 
-browser compatiable
-userstory
-validator

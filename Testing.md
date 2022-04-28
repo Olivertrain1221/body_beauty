@@ -11,6 +11,8 @@ Please see below the validation for each page
 * Signup page 1 error, 0 warning Element ul not allowed as child of element small in this context, except under certain conditions. (Condition met due to it being import from built in Django framework)
 * Logout page 0 errors, 0 warning
 
+#### Javascript Validator
+I ran my small Javascript through a validator and was returned no issues
 
 #### CSS Validator
 After running the CSS through my autoprefixer at [here](https://autoprefixer.github.io/) I ran the code then through a validator where I was greeted with A no error found message and 64 warnings due to the autoprefixer changes.
@@ -72,7 +74,7 @@ When clicking this it shows a form for the user to fill out.
 Upon completion of this form and adhering to all of the standards it requires it will redirect to the login page.
 This then can be filled out with prior or the new users details. 
 
-[login](/documentation/testing/test-docs/)
+[login](/documentation/testing/test-docs/login.png)
 
 
 #### Individual Cards of posts - (Unregistered View and not the Author of the post)
@@ -104,5 +106,26 @@ This allowed for basic crud functionality
 [profile](/documentation/testing/test-docs/profile.png)
 
 
+#### Edit Your own Post
+The edit your own post works correctly allowing only a user that is the owner of the post to edit it. The edit function works by just allowing them to edit all of the fields they inputed apart from the date.
 
+[edit-posts](/documentation/testing/test-docs/edit-posts.png)
+
+
+#### Delete Posts
+When clicked on, the delete button should redirect accordingly to the delete view. Giving the user the option to confirm the delete and redirect to the gallery or the cancel the delete and return to the gallery.
+
+[delete-posts](/documentation/testing/test-docs/delete-post.png)
+
+
+#### Edit Profile
+The edit your own profile works correctly allowing only a user that is the owner of the profile to edit it. The edit function works by just allowing them to edit all of the fields they inputed apart from the date.
+
+[edit-profile](/documentation/testing/test-docs/edit-profile.png)
+
+
+#### Delete Profile
+When clicked on, the delete button should redirect accordingly to the delete view. Giving the user the option to confirm the delete and redirect to the homepage or the cancel the delete and return to the profile.
+
+[delete-profile](/documentation/testing/test-docs/delete-profile.png)
 
