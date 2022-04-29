@@ -19,8 +19,7 @@ class TattooListView(ListView):
     model = TattooPost
     template_name = 'tattooblog/tattoo_gallery.html'
     context_object_name = 'tattooposts'
-    class Meta:
-        ordering = ['-date']
+    ordering = ['-date', ]
 
 
 class TattooDetailListView(DetailView):
