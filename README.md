@@ -230,7 +230,7 @@ When testing my site i proceeded to use the “manual testing” procedure as I 
 #### Testing Overview
 
 When testing this Project I divided it into different sections this was done therefore to ensure that basic test were written and validated within what the terms of the code was written for.
-A full detailed breakdown of the testing procedures and methodology can be found in the testing.md file [here](/TESTING.md)
+A full detailed breakdown of the testing procedures and methodology can be found in the testing.md file [here](/Testing.md)
 
 
 
