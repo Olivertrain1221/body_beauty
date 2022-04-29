@@ -27,6 +27,7 @@ body {
 
 .slogan {
     color: white;
+    font-family: 'Dancing Script', cursive;
 }
 
 #div_id_profile_image div *:not(:last-child){

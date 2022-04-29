@@ -129,3 +129,7 @@ When clicked on, the delete button should redirect accordingly to the delete vie
 
 [delete-profile](/documentation/testing/test-docs/delete-profile.png)
 
+
+
+#### Major Bugs
+One bug that was noticed by a friend was the fact that a user could upload any file type to the image field. When the user then clicked the update

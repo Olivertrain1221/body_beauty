@@ -19,7 +19,7 @@ class TattooPost(models.Model):
     author = models.ForeignKey(Profile, default=None, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.title
+        return str(self.title)
 
     def info(self):
         return self.body
