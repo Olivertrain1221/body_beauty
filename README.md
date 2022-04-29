@@ -300,15 +300,14 @@ A full detailed breakdown of the testing procedures and methodology can be found
 * The HTMX documentation was used as a reference source for the development of the HTMX features
 * The Cloudinary documentation was used extensively during development to setup the configuration between django and the cloudinary apis
 * The Code Institute reference material was used as a general reference for things that I had previously done during the course.
-* 
 * All other resources used are referenced where appropriate.
 
 ## Deployment
 
-The site was deployed via Heroku, and the live link can be found here - [
 
 ### Project Deployment
 
+The site was deployed via Heroku, and the live link can be found here - [
 To deploy the project through Heroku I followed these steps:
 * Sign up / Log in to [Heroku](https://www.heroku.com/)
 * From the main Heroku Dashboard page select 'New' and then 'Create New App'
