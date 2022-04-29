@@ -1,7 +1,7 @@
 # Body Beauty
 
 ## Introduction
-Body Beauty is a website built in Django using Python, JavaScript, CSS and HTML. It is a site that allows a user to to see and share the Tattoo artists work at that store from real time users due to it having a built in blog. Users are able to create posts for the world to see. along with there own profile!
+Body Beauty is a website built in Django using Python, JavaScript, CSS and HTML. It is a site that allows a user to to see and share the Tattoo artists work at that store from real time users due to it having a built in blog. Users are able to create posts for the world to see. Along with there own profile!
 
 This is My(Oliver Train) fourth project for the Code Institute Diploma in Software Development with eCommerce.
 

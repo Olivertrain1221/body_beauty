@@ -102,34 +102,12 @@ def update_post_view(request, slug):
                 }
                 return render(request,
                               'tattooblog/tattoopost_form.html', context)
-    
+
     context = {
-        'form' : post_form
+        'form': post_form
     }
 
     return render(request, 'tattooblog/tattoopost_form.html', context)
-
-
-# class UpdatePostView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
-#     """
-#     Class base view of updating an original post
-#     """
-#     model = TattooPost
-#     fields = ['title', 'body', 'image']
-#     template_name = 'tattooblog/tattoopost_form.html'
-#     success_url = '/tattooblog/'
-
-#     def form_valid(self, form):
-#         profile = get_object_or_404(Profile, user=self.request.user)
-#         form.instance.author = profile
-#         return super().form_valid(form)
-
-#     def test_func(self):
-#         post = self.get_object()
-#         profile = get_object_or_404(Profile, user=self.request.user)
-#         if profile == post.author:
-#             return True
-#         return False
 
 
 class DeleteAPostView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):

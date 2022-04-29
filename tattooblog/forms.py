@@ -17,5 +17,5 @@ class EditPost(forms.ModelForm):
     This is the Form to update the Users account
     """
     class Meta:
-         model = TattooPost
-         fields = ['title', 'body', 'image']
+        model = TattooPost
+        fields = ['title', 'body', 'image']

@@ -83,10 +83,10 @@ def profile_view(request):
             except:
                 messages.warning(request, 'Please Use an Image')
                 account_form = AccountUpdateForm(request.POST,
-                                         instance=request.user)
+                                                 instance=request.user)
                 profile_form = ProfileFormUpdate(request.POST,
-                                                request.FILES,
-                                                instance=request.user.profile)
+                                                 request.FILES,
+                                                 instance=request.user.profile)
                 context = {
                     'profile_form': profile_form,
                     'account_form': account_form,
