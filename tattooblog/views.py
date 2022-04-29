@@ -1,10 +1,11 @@
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect, render
+from tattooblog.forms import CreatePost, EditPost
+from django.contrib import messages
 from .models import TattooPost
 from django.views.generic import (
     ListView,
     DetailView,
     UpdateView,
-    CreateView,
     DeleteView
     )
 from accounts.models import Profile
@@ -43,41 +44,92 @@ class TattooDetailListView(DetailView):
     context_object_name = 'post'
 
 
-class PostCreateView(LoginRequiredMixin, CreateView):
+def postcreateview(request):
     """
-    Class base view of Tattoo model creating a post
+    Creates the post
     """
-    model = TattooPost
-    template_name = 'tattooblog/tattoo_post_create.html'
-    fields = ['title', 'body', 'image']
-    success_url = '/tattooblog/'
+    form = CreatePost()
+    context = {
+        'form': form
+    }
+    if request.method == 'POST':
+        form = CreatePost(request.POST, request.FILES)
+        if form.is_valid():
+            try:
+                profile = get_object_or_404(Profile, user=request.user)
+                tattoo_form = form.save(commit=False)
+                tattoo_form.author = profile
+                tattoo_form.save()
+                print('got below save')
+                return redirect('tattooposts:tattoo_gallery')
+            except:
+                messages.warning(request, 'Please Use an Image')
+                context = {
+                    'form': form
+                }
+                return render(request,
+                              'tattooblog/tattoo_post_create.html', context)
+        else:
+            context = {
+                'form': form
+            }
+            messages.warning(request, 'Please fill out the form accordingly.')
+            return render(request,
+                          'tattooblog/tattoo_post_create.html', context)
 
-    def form_valid(self, form):
-        profile = get_object_or_404(Profile, user=self.request.user)
-        form.instance.author = profile
-        return super().form_valid(form)
+    return render(request, 'tattooblog/tattoo_post_create.html', context)
 
 
-class UpdatePostView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+def update_post_view(request, slug):
     """
-    Class base view of updating an original post
+    update
     """
-    model = TattooPost
-    fields = ['title', 'body', 'image']
-    template_name = 'tattooblog/tattoopost_form.html'
-    success_url = '/tattooblog/'
+    post = get_object_or_404(TattooPost, slug=slug)
+    post_form = EditPost(instance=post)
+    if request.method == 'POST':
+        post_form = EditPost(request.POST,
+                             request.FILES,
+                             instance=post)
+        if post_form.is_valid():
+            try:
+                post_form.save()
+                messages.info(request, 'Post Updated!')
+                return redirect('tattooposts:tattoo_gallery')
+            except:
+                messages.warning(request, 'Please Use an Image')
+                context = {
+                    'form': post_form
+                }
+                return render(request,
+                              'tattooblog/tattoopost_form.html', context)
+    
+    context = {
+        'form' : post_form
+    }
 
-    def form_valid(self, form):
-        profile = get_object_or_404(Profile, user=self.request.user)
-        form.instance.author = profile
-        return super().form_valid(form)
+    return render(request, 'tattooblog/tattoopost_form.html', context)
 
-    def test_func(self):
-        post = self.get_object()
-        profile = get_object_or_404(Profile, user=self.request.user)
-        if profile == post.author:
-            return True
-        return False
+
+# class UpdatePostView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+#     """
+#     Class base view of updating an original post
+#     """
+#     model = TattooPost
+#     fields = ['title', 'body', 'image']
+#     template_name = 'tattooblog/tattoopost_form.html'
+#     success_url = '/tattooblog/'
+
+#     def form_valid(self, form):
+#         profile = get_object_or_404(Profile, user=self.request.user)
+#         form.instance.author = profile
+#         return super().form_valid(form)
+
+#     def test_func(self):
+#         post = self.get_object()
+#         profile = get_object_or_404(Profile, user=self.request.user)
+#         if profile == post.author:
+#             return True
+#         return False
 
 
 class DeleteAPostView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
@@ -85,7 +137,7 @@ class DeleteAPostView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     Class base view of deleting an original post
     """
     model = TattooPost
-    success_message = "YOU DID IT OLLIE was updated successfully"
+    success_message = "Post Deleted"
     success_url = '/tattooblog/'
 
     def test_func(self):
@@ -94,5 +146,3 @@ class DeleteAPostView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         if profile == post.author:
             return True
         return False
-
-        ######## FIGURE OUT THE MESDSAGES ON CLASS BASED VIEWS IMPOPRT THE MIXIN AT TOP ADN TO ABOVE FUNCTION
