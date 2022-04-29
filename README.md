@@ -66,7 +66,6 @@ These are the user stories that were completed within the project's first releas
 
 * US#1 - As a User, I can Navigate successfully around the site so that the User experience is rewarding.
 * US#2 - As a User, I can Post images to a user gallery of my tattoos so that they can be shared with others.
-	
 * US#8 - As a User I can Create a login to the site so that I can move around the site and look at the corresponding images posted by users**
 * US#9 - As a User I can see whether I am currently logged in to the site and also create an account if not registered so that I can use the site to its full potential
 * US#10 - As a User I can view my profile and delete my profile so that I have control of my own account
