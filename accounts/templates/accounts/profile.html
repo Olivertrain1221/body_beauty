@@ -8,22 +8,22 @@
   <img class="img-thumbnail m-3 rounded mb" src="{{ user.profile.profile_image.url }}">
   <div class="media-body">
     <h2 class="account-heading">{{ user.username }}</h2>
-    <form method="POST" class="uniForm " enctype="multipart/form-data">
-        {% csrf_token %}
-        <div class="form-group signup">
-            Profile Info
-            {{ account_form|crispy }}
-            {{ profile_form|crispy }}
-        </div>
-        <div class="form-group">
-            <button class="btn btn-dark" type="submit">Update</button>
-            <a class="btn btn-dark" href="{% url 'accounts:deleteprofile' %}">
-              Delete
-            </a>
-          </div>
-        </form>
+    <form method="POST" class="uniForm" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="form-group signup">
+        <p>Profile Info</p>
+        {{ account_form|crispy }}
+        {{ profile_form|crispy }}
       </div>
-    </div>
+      <div class="form-group">
+        <button class="btn btn-dark" type="submit">Update</button>
+        <a class="btn btn-dark" href="{% url 'accounts:deleteprofile' %}">
+          Delete
+        </a>
+      </div>
+    </form>
+  </div>
+</div>
 
 
 {% endblock %}

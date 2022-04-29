@@ -1,7 +1,4 @@
 {% load static %}
-<!-- TODO: Sort boostrap versions out -->
-<!-- TODO: logging in of the user -->
-<!-- TODO: Create seperate app for about + or homepage (assess) -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,47 +18,49 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-    <title>BodyBeauty</title>
+  <title>BodyBeauty</title>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand fs-1 text header mg-2" href="{% url 'homepage' %}">Body Beauty</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav ms-4 me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link fs-2" aria-current="page" href="{% url 'homepage' %}">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fs-2" href="{% url 'about' %}">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fs-2" href="{% url 'tattooposts:tattoo_gallery' %}">Gallery</a>
-          </li>
-          {% if user.is_authenticated%}
-          <li class="nav-item">
-            <a class="nav-link fs-2" href="{% url 'accounts:logout' %}">Logout</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fs-2" href="{% url 'accounts:profile' %}">Profile</a>
-          </li>
-          {% else %}
-          <li class="nav-item">
-            <a class="nav-link fs-2" href="{% url 'accounts:login' %}">Login</a>
-          </li>
-          {% endif %}
-        </ul>
-        <span class="navbar-text">
-        </span>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand fs-1 text header mg-2" href="{% url 'homepage' %}">Body Beauty</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+          aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav ms-4 me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link fs-2" aria-current="page" href="{% url 'homepage' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-2" href="{% url 'about' %}">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-2" href="{% url 'tattooposts:tattoo_gallery' %}">Gallery</a>
+            </li>
+            {% if user.is_authenticated%}
+            <li class="nav-item">
+              <a class="nav-link fs-2" href="{% url 'accounts:logout' %}">Logout</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-2" href="{% url 'accounts:profile' %}">Profile</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link fs-2" href="{% url 'accounts:login' %}">Login</a>
+            </li>
+            {% endif %}
+          </ul>
+          <span class="navbar-text">
+          </span>
+        </div>
       </div>
-    </div>
-  </nav>
-  <div class="wrapper col-md-8">
+    </nav>
+  </header>
+  <section class="wrapper col-md-8">
     {% if messages %}
     {% for message in messages %}
     <div class="alert alert-{{ message.tags }}">
@@ -71,7 +70,7 @@
     {% endif %}
     {% block content %}
     {% endblock %}
-  </div>
+  </section>
   <footer class="footer navbar-expand-lg mt-4 bg-dark p-4">
     <ul class="navbar-nav mx-auto gap-1 gap-md-4 mb-2 mb-lg-0 flex flex-column flex-md-row justify-content-center">
       <li class="nav-item">

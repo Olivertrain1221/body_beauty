@@ -3,10 +3,10 @@
 
 
 {% block content %}
-    <h1>Leaving so soon?</h1>
-        <form method="post" class="logout-form">
-            {% csrf_token %}
-            <p>Are you sure you want to logout?</p>
-            <input type="submit" class="btn btn-success" value="logout">
-        </form>
+<h1>Leaving so soon?</h1>
+<form method="post" class="logout-form">
+    {% csrf_token %}
+    <p>Are you sure you want to logout?</p>
+    <input type="submit" class="btn btn-success" value="logout">
+</form>
 {% endblock %}
