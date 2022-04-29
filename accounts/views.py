@@ -75,11 +75,19 @@ def profile_view(request):
                                          instance=request.user.profile)
 
         if account_form.is_valid() and profile_form.is_valid():
-            account_form.save()
-            profile_form.save()
-            messages.info(request, 'Profile Updated Successfully.')
-            return redirect('accounts:profile')
-
+            try:
+                account_form.save()
+                profile_form.save()
+                messages.info(request, 'Profile Updated Successfully.')
+                return redirect('accounts:profile')
+            except:
+                messages.warning(request, 'Please Use an Image')
+                context = {
+                    'account_form': account_form,
+                    'profile_form': profile_form,
+                }
+                return render(request,
+                              'accounts/profile.html')
     else:
         account_form = AccountUpdateForm(instance=request.user)
         profile_form = ProfileFormUpdate(instance=request.user.profile)

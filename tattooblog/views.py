@@ -1,11 +1,11 @@
 from django.shortcuts import get_object_or_404, redirect, render
 from tattooblog.forms import CreatePost, EditPost
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from .models import TattooPost
 from django.views.generic import (
     ListView,
     DetailView,
-    UpdateView,
     DeleteView
     )
 from accounts.models import Profile
@@ -60,7 +60,6 @@ def postcreateview(request):
                 tattoo_form = form.save(commit=False)
                 tattoo_form.author = profile
                 tattoo_form.save()
-                print('got below save')
                 return redirect('tattooposts:tattoo_gallery')
             except:
                 messages.warning(request, 'Please Use an Image')
@@ -80,6 +79,7 @@ def postcreateview(request):
     return render(request, 'tattooblog/tattoo_post_create.html', context)
 
 
+@login_required
 def update_post_view(request, slug):
     """
     update
