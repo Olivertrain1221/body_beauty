@@ -17,7 +17,7 @@ I ran my small Javascript through a validator and was returned no issues
 #### CSS Validator
 After running the CSS through my autoprefixer at [here](https://autoprefixer.github.io/) I ran the code then through a validator where I was greeted with A no error found message and 64 warnings due to the autoprefixer changes.
 
-[CSS validation](/documentation/testing/css_validator.png)
+![CSS validation](/documentation/testing/validators/css_validator.png)
 
 #### Python Validator
 Due to Python requiring standards across the board i had to ensure that any code I had writted was up to the PEP8 guidelines. I ran my code through a online validator on all code I had written, with the exception of 2x line to long warnings my code passed. The code that was flagged as being too long were to do with linking my Cloudinary to the project. This is a allowable error I have been informed
@@ -31,7 +31,7 @@ I ran the built in chrome lighthouse report for my live site to test and ensure 
 * Best Practices = 92%
 * SEO = 90% 
 
-[LightHouse Report](/documentation/testing/lighthouse_report.png)
+![LightHouse Report](/documentation/testing/validators/lighthouse_report.png)
 
 #### Notable Bugs
 
@@ -57,13 +57,13 @@ When starting my testing I started page by page as a user that wasnt logged in. 
 The nav bar was simple to test Starting on a mobile device i checked it worked with the smaller widget. I then proceeded to test on desktop and table.
 The site behaved as expected upon testing all of the possible links and the logo on the site.
 
-[nav-bar](/documentation/testing/test-docs/nav-bar.png)
+![nav-bar](/documentation/testing/test-docs/nav-bar.png)
 
 
 #### Footer
 The footer was simple to test again just testing the links all worked and took me to the correct page.
 
-[footer](/documentation/testing/test-docs/footer.png)
+![footer](/documentation/testing/test-docs/footer.png)
 
 
 #### Login/Signup
@@ -74,28 +74,28 @@ When clicking this it shows a form for the user to fill out.
 Upon completion of this form and adhering to all of the standards it requires it will redirect to the login page.
 This then can be filled out with prior or the new users details. 
 
-[login](/documentation/testing/test-docs/login.png)
+![login](/documentation/testing/test-docs/login.png)
 
 
 #### Individual Cards of posts - (Unregistered View and not the Author of the post)
 The individual cards of peoples posts was shown in the correct way with all the detail but missing two elements, shown in below test.
 
-[card-unregistered](/documentation/testing/test-docs/individual-post-links-unregistered.png)
+![card-unregistered](/documentation/testing/test-docs/individual-post-links-unregistered.png)
 
 
 #### Individual Cards of posts - (Registered View + Posted)
 The individual card will appear as above but will add two basic crud buttons an "edit" , "delete" buttons are shows to the user only if they are the one who made the posts.
 
-[card-registered](/documentation/testing/test-docs/individual-post-links-registered.png)
+![card-registered](/documentation/testing/test-docs/individual-post-links-registered.png)
 
 
 #### Gallery Page
 The gallery page Make a post functionality was requried to be tested, they way upon which it worked was if the user was not logged in it said "You need to log in to post" appose to when you were logged in "Make a post"
 This can all be seen in these two test methods each one working correctyly either A redirect to the login page or B take to the form to complete to create a post.
 
-[not-logged-in](/documentation/testing/test-docs/make-a-post-unregistered.png)
+![not-logged-in](/documentation/testing/test-docs/make-a-post-unregistered.png)
 
-[not-logged-in](/documentation/testing/test-docs/make-a-post-registered.png)
+![not-logged-in](/documentation/testing/test-docs/make-a-post-registered.png)
 
 
 #### Profile 
@@ -103,33 +103,32 @@ The profile is only able to be accessed via the link on the navbar when you are 
 This is therefore why it is displayed in editable fields in a form.
 This allowed for basic crud functionality
 
-[profile](/documentation/testing/test-docs/profile.png)
+![profile](/documentation/testing/test-docs/profile.png)
 
 
 #### Edit Your own Post
 The edit your own post works correctly allowing only a user that is the owner of the post to edit it. The edit function works by just allowing them to edit all of the fields they inputed apart from the date.
 
-[edit-posts](/documentation/testing/test-docs/edit-posts.png)
+![edit-posts](/documentation/testing/test-docs/edit-posts.png)
 
 
 #### Delete Posts
 When clicked on, the delete button should redirect accordingly to the delete view. Giving the user the option to confirm the delete and redirect to the gallery or the cancel the delete and return to the gallery.
 
-[delete-posts](/documentation/testing/test-docs/delete-post.png)
+![delete-posts](/documentation/testing/test-docs/delete-post.png)
 
 
 #### Edit Profile
 The edit your own profile works correctly allowing only a user that is the owner of the profile to edit it. The edit function works by just allowing them to edit all of the fields they inputed apart from the date.
 
-[edit-profile](/documentation/testing/test-docs/edit-profile.png)
+![edit-profile](/documentation/testing/test-docs/edit-profile.png)
 
 
 #### Delete Profile
 When clicked on, the delete button should redirect accordingly to the delete view. Giving the user the option to confirm the delete and redirect to the homepage or the cancel the delete and return to the profile.
 
-[delete-profile](/documentation/testing/test-docs/delete-profile.png)
-
-
+![delete-profile](/documentation/testing/test-docs/delete-profile.png)
 
 #### Major Bugs
-One bug that was noticed by a friend was the fact that a user could upload any file type to the image field. When the user then clicked the update
+One bug that was noticed by a friend was the fact that a user could upload any file type to the image field. When the user then clicked the update button the whole site would crash due to my site accepting the file but Cloudianry the image host I am using, arejecting it and sending it back to my site with an error.
+I therefore had to come to some sort of removal of the option to upload images. This I struggled with whenit came to putting it into the Class base oringal view. This is why you may notice that I rewrote the class based view to a function view yesterday(28/4/22). This was something that I massively overlooked during development. My process to sort this was to implement and try/except loop that if the post request was unsuccessful then to just return to the upload page and brief the user with an error message. This was implemented and works.

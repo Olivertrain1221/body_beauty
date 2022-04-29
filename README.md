@@ -7,9 +7,9 @@ This is My(Oliver Train) fourth project for the Code Institute Diploma in Softwa
 
 The site provides role based permissions for users to interact with a central dataset. It includes user authentication, email validation, and Full CRUD functionality for there posts and User Profiles.
 
-![Screenshot of homepage]()
+![Screenshot of homepage](/documentation/site-images/home-page.png)
 
-[View the live website on Heroku]()
+[View the live website on Heroku](https://p4beautybody.herokuapp.com/about/)
 
 Please note: To open any links in this document in a new browser tab, please press CTRL + Click.
 
@@ -116,32 +116,38 @@ Arising from user stories
 ### The Skeleton Plane
 #### Wireframe mock-ups
 
-Home page: The home page provides the user with a clear and welcoming page to the site and allows users to understand quickly the overall purpose of the site. The welcome message is clearly visible to the user when they first arrive at the site regardless of the device they are using. ![Recipe Detail Desktop Wireframe]()
+Home page: The home page provides the user with a clear and welcoming page to the site and allows users to understand quickly the overall purpose of the site. The welcome message is clearly visible to the user when they first arrive at the site regardless of the device they are using.
 
 ![Home Page Wireframe](/documentation/wireframes/homepage.png)
+
 
 About page: The about page sheds some history and information regarding the shop and also gives the user the chance to learn about what the shop and the overall site have to offer to users.
 
 ![About Page Wireframe](/documentation/wireframes/about-contact.png)
 
+
 Users also have the ability to sign up to the site which automatically creates a profile for them. From this profile, users can change any of the information they originally supplied upon signup, also allowing them to add a profile image.
 
 ![User Profile Desktop Wireframe](/documentation/wireframes/profile.png)
+
 
 Users that aren't registered with the site have the ability to view any posts made by other users which are displayed on the sites ‘gallery’. The posts are shown from newest to oldest so users have a constant relay of fresh posts.
 
 ![Gallery Page not Registered desktop wireframe](/documentation/wireframes/gallery-forum-not-logged-in.png)
 
+
 Users that are registered with the site have the extra ability to share their own posts to the site for other users to view.
 
 ![Gallery Page Users that are logged in](/documentation/wireframes/gallery-forum-logged-in.png)
+
 
 Users that are registered with the site have the extra ability to share their own posts to the site for other users to view.
 
 
 Wireframes were also produced for the main major pages for the idealistic mobile view, for both mobile and tablet devices. With the intention of the site being fully responsive so that no matter the device size the user is viewing the site on, it will display accordingly.
 
-#### Database Schema
+
+### Database Schema
 
 As predicted when making a django site, certain custom models are required to be made in order for the site to work. I spent time thinking about what would be required in the models for the site to work smoothly as well as the type of relationships required between them
 
@@ -161,11 +167,12 @@ Comin Neue was my chosen font for the sites page due to it being a nice clear pr
 ##### Images
 Several images that were used were on the pexels website, I used select images to fit into shop itself.
 
+
 ## Features
+
 #### Home page
 A welcoming homepage was built to welcome the user to the site and clearly convey the sites purpose.
 
-![Home Page](
 
 #### Navigation Bar
 The main navigation bar appears at the top of the page, clearly displaying the main navigational links users would require.
@@ -192,20 +199,22 @@ A normal common footer was used throughout the site as part of the base.html , t
 When on the gallery page the posts are shown in a card format this allows a unison way of posts and allows the user to post any size image and for it to be scaled accordingly. 
 
 ##### Standard Gallery Post Card
-![Standard Galler Post Card](/documentation/site-images/gallery.png)
+
+![Standard Galler Post Card](/documentation/site-images/gallery-page.png)
 
 ##### Selected Individual Post
-![Selected Post]()
+
+![Selected Post](/documentation/site-images/detail-page.png)
 
 
 #### User Profile
 Users have the choice to add to there profile. When a User creates a login and profile is already made for them and they are given editable fields they are not supplied a profile image until they upload one. The user profile page provides the profile owner with quick access to edit and delete functionality.
 
-![Users Profile Page]()
-
+![Users Profile Page](/documentation/site-images/profile.png)
 
 #### Editing a Post
 From the gallery page, should they choose an image they like, they can then click the post and it will take them to the post and display more detail with a full bio, opposed to the smaller blurb given on the main gallery page.
+
 ## Future Enhancements
 There are many key enhancement that as my knowledge explands i would love to introduce into this site. Some of the key enhancements I want to add are listed below. These enhancements will help to create a much more sophisticated site.
 The key areas I would like to add to the site in the future are:
@@ -221,7 +230,7 @@ When testing my site i proceeded to use the “manual testing” procedure as I 
 
 #### Testing Overview
 
-When testing this Project I divided it into different sections this was done therefor to ensure that basic test were written and validated within what the terms of the code was written for.
+When testing this Project I divided it into different sections this was done therefore to ensure that basic test were written and validated within what the terms of the code was written for.
 A full detailed breakdown of the testing procedures and methodology can be found in the testing.md file [here](/TESTING.md)
 
 
